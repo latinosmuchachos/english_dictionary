@@ -93,7 +93,10 @@ def update_final_slovar(parameters):
                         print(f"Добавлен новый перевод слова {word} - {translate}")
                         flag_update = True
             else:
-                final_slovar[word]["translation"] = slovar[word]["translate"]
+                final_slovar[word] = {
+                    "translation": slovar[word]["translate"],
+                    "wrong answer": 0
+                }
                 print(f"Добавлено новое слово {word} со следующими переводами:")
                 for translate in slovar[word]["translate"]:
                     print(f"-{translate}")
