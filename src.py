@@ -129,7 +129,6 @@ def repeat_words(parameters):
     count_repeated_words = int(input())
     # сбор информации о словах и их неправильных ответах
     words = get_wrong_answers(final_slovar)
-    print(words)
     # получение отсортированного в порядке убывания
     # списка кол-ва неправильных ответов
     count_wrong_answers = sorted(list(words.keys()))
@@ -185,7 +184,7 @@ def repeat_words(parameters):
         for i in range(count_repeated_words):
             random_word = random.choice(list(final_slovar.keys()))
             while random_word in prev_random_words:
-                random_word = random.choice(final_slovar.keys())
+                random_word = random.choice(list(final_slovar.keys()))
             prev_random_words.append(random_word)
             print(f"Какой перевод у слова {random_word}?")
             translate_answer = input()
