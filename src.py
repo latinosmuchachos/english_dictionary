@@ -192,7 +192,8 @@ def repeat_words(parameters):
                 print("Верно. Вот еще переводы данного слова:")
                 for translate in final_slovar[random_word]["translation"]:
                     print(f"- {translate}")
-                final_slovar[random_word]["wrong answer"] -= 1
+                if final_slovar[random_word]["wrong answer"] > 0:
+                    final_slovar[random_word]["wrong answer"] -= 1
             else:
                 print("Данного перевода нет в словаре. Вот переводы из словаря:")
                 for translate in final_slovar[random_word]["translation"]:
